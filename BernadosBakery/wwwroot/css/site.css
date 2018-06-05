@@ -1,6 +1,11 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("../images/home-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 /* Wrapping element */
@@ -32,4 +37,20 @@
     .carousel-caption {
         display: none;
     }
+}
+
+.formcolour {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    opacity: 0.8;
+}
+
+#section {
+
+    background-color: white;
+    opacity: 0.8;
 }

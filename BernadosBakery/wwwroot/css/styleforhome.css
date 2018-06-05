@@ -1,10 +1,4 @@
-/*
 
-Template 2076 Zentro
-
-http://www.tooplate.com/view/2076-zentro
-
-*/
 
 body
 	{
@@ -255,7 +249,7 @@ footer {
   background-size: cover;
   background-position: center;
   color: #ffffff;
-  padding-top: 80px;
+  /*padding-top: 80px;*/
   padding-bottom: 80px;
 }
 footer h2 {
@@ -327,4 +321,13 @@ footer .fa {
 }
 #copyright a:hover {
   color: #FF0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    font-size: 16px;
+    font-weight:bold;
 }

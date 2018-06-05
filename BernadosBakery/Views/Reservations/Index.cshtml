@@ -1,0 +1,59 @@
+﻿@model IEnumerable<BernadosBakery.Models.Reservation>
+@using BernadosBakery.Operations;
+@{
+    ViewData["Title"] = "Index";
+}
+<section>
+    <h2>Reservations</h2>
+  
+    <p>
+        <a asp-controller="Guests" asp-action="Create">CREATE RESERVATION</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.GuestId)
+                </th>
+
+
+                <th>
+                    @Html.DisplayNameFor(model => model.DateTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumGuests)
+                </th>
+                <th>
+
+                    @Html.DisplayNameFor(model => model.SeatingType)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GuestId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumGuests)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SeatingType)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

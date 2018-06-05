@@ -1,7 +1,94 @@
-﻿@{
-    ViewData["Title"] = "About";
+﻿<br /><br />
+@{
+    ViewData["Title"] = "ADMIN SECTION";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
+
+
+@model BernadosBakery.Models.GetAll
+
+
+
+
+<div class="row">
+    <div class="col-md-6">
+        <section>
+            <h2>@ViewData["Title"]</h2>
+            <h3><b>List Of Pies</b></h3>
+
+
+
+            <ul>
+                @foreach (var pie in Model.pies)
+        {
+
+            <li>@pie.Name</li>
+
+
+}
+
+            </ul>
+
+            <a asp-controller="Pies" asp-action="Index">Manage</a>
+            <br />
+
+
+            <h3><b>List Of Cakes</b></h3>
+            <ul>
+                @foreach (var cake in Model.cakes)
+
+        {
+            <li>@cake.Name</li>
+
+}
+            </ul>
+
+            <a asp-controller="Cakes" asp-action="Index">Manage</a>
+
+
+            <h3><b>List Of Drinks</b></h3>
+            <ul>
+                @foreach (var drink in Model.drinks)
+
+        {
+            <li>@drink.Name</li>
+
+}
+
+            </ul>
+            <a asp-controller="Drinks" asp-action="Index">Manage</a>
+
+
+
+            <h3><b>List Of Sandwiches</b></h3>
+            <ul>
+                @foreach (var sandwich in Model.sandwichs)
+
+        {
+            <li>@sandwich.Name</li>
+
+}
+
+            </ul>
+            <a asp-controller="Sandwiches" asp-action="Index">Manage</a>
+        </section>
+    </div>
+
+    <div class="col-md-6">
+        <section>
+        <h3>RESERVATIONS</h3>
+
+        <a asp-controller="Guests" asp-action="Create">CREATE NEW RESERVATION</a>
+
+        <br />
+
+        <a asp-controller="Reservations" asp-action="Index">VIEW RESERVATIONS</a>
+
+        <img src="~/images/weechef.jpg" width="150" class="img-responsive" />
+        </section>
+    </div>
+
+
+
+</div>
+

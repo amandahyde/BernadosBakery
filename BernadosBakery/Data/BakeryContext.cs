@@ -27,5 +27,15 @@ namespace BernadosBakery.Data
 
         public DbSet<Sandwich> Sandwich { get; set; }
 
+      
+
+        public DbSet<BernadosBakery.Models.Guest> Guest { get; set; }
+
+      
+
+        public DbSet<BernadosBakery.Models.Reservation> Reservation { get; set; }
+
+       
+
     }
 }

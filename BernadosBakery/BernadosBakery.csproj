@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20180520230906_init.cs" />
+    <Compile Remove="Migrations\20180520230906_init.Designer.cs" />
+    <Compile Remove="Migrations\20180522221717_initialize.cs" />
+    <Compile Remove="Migrations\20180522221717_initialize.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\js\.DS_Store" />
     <Content Remove="wwwroot\js\bootstrap.min.js" />
     <Content Remove="wwwroot\js\custom.js" />
@@ -43,7 +50,7 @@
     <None Include="wwwroot\css\nivo_themes\default\next.png" />
     <None Include="wwwroot\css\nivo_themes\default\prev%402x.png" />
     <None Include="wwwroot\css\nivo_themes\default\prev.png" />
-    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\css\styleforhome.css" />
     <None Include="wwwroot\fonts\.DS_Store" />
     <None Include="wwwroot\fonts\fontawesome-webfont.eot" />
     <None Include="wwwroot\fonts\fontawesome-webfont.svg" />

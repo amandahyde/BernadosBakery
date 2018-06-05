@@ -1,0 +1,44 @@
+﻿
+@model BernadosBakery.Models.GetAll.ViewModel
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>@ViewBag.Message</h2>
+
+<p><b>Pie List</b></p>
+
+<table>
+    <tr>
+        <th></th>
+        <th>Code</th>
+        <th>Name</th>
+    </tr>
+    @foreach (Pie Pies in Model.Pies)
+    {
+        <tr>
+            <td>@Pies.Id</td>
+            <td>@Pies.Name</td>
+
+
+        </tr>
+    }
+</table>
+
+<table>
+    <tr>
+        <th></th>
+        <th>Code</th>
+        <th>Name</th>
+    </tr>
+    @foreach (Cake Cakes in Model.Cakes)
+    {
+        <tr>
+            <td>@Cakes.Id</td>
+            <td>@Cakes.Name</td>
+
+
+        </tr>
+    }
+</table>  

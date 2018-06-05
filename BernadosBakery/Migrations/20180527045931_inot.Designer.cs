@@ -5,13 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
 namespace BernadosBakery.Migrations
 {
     [DbContext(typeof(BakeryContext))]
-    [Migration("20180520230906_init")]
-    partial class init
+    [Migration("20180527045931_inot")]
+    partial class inot
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,10 +24,6 @@ namespace BernadosBakery.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ImageThumbnailUrl");
-
-                    b.Property<string>("ImageUrl");
 
                     b.Property<bool>("IsCakeOfWeek");
 
@@ -50,10 +47,6 @@ namespace BernadosBakery.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ImageThumbnailUrl");
-
-                    b.Property<string>("ImageUrl");
-
                     b.Property<bool>("IsDrinkOfWeek");
 
                     b.Property<string>("LongDesc");
@@ -71,14 +64,24 @@ namespace BernadosBakery.Migrations
                     b.ToTable("Drink");
                 });
 
+            modelBuilder.Entity("BernadosBakery.Models.Guest", b =>
+                {
+                    b.Property<int>("GuestId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.HasKey("GuestId");
+
+                    b.ToTable("Guest");
+                });
+
             modelBuilder.Entity("BernadosBakery.Models.Pie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ImageThumbnailUrl");
-
-                    b.Property<string>("ImageUrl");
 
                     b.Property<bool>("IsPieOfWeek");
 
@@ -97,14 +100,28 @@ namespace BernadosBakery.Migrations
                     b.ToTable("Pie");
                 });
 
+            modelBuilder.Entity("BernadosBakery.Models.Reservation", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("DateTime");
+
+                    b.Property<int>("GuestId");
+
+                    b.Property<int>("NumGuests");
+
+                    b.Property<string>("SeatingType");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Reservation");
+                });
+
             modelBuilder.Entity("BernadosBakery.Models.Sandwich", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ImageThumbnailUrl");
-
-                    b.Property<string>("ImageUrl");
 
                     b.Property<bool>("IsSandwichOfWeek");
 

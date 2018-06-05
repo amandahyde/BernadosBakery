@@ -1,0 +1,59 @@
+﻿@model BernadosBakery.DTO.GetAllGV;
+@using BernadosBakery.Operations;
+
+@{
+    ViewData["Title"] = "Details";
+}
+<section>
+
+
+    <div>
+
+
+
+
+        <h3><b>Reservation Details</b></h3>
+        <p>
+         Date/Time:   @Html.DisplayFor(model => model.myReservation.DateTime)
+        </p>
+        <p> Seating Type:   @Html.DisplayFor(model => model.myReservation.SeatingType)</p>
+        <p>NO. Guests:   @Html.DisplayFor(model => model.myReservation.NumGuests)</p>
+
+
+
+        @foreach (var guest in Model.guests)
+    {
+        if (guest.GuestId == DatabaseManager.GuestID)
+        {
+            <p>Guest Name: @Html.DisplayFor(modelItem => guest.Name)</p>
+            <p>Guest Number: @Html.DisplayFor(modelItem => guest.PhoneNumber)</p>
+
+    }
+
+}
+
+
+
+
+
+
+        <h3><b>List Of Reservations</b></h3>
+        @*<ul>
+                @foreach (var reserve in Model.reservations)
+
+
+
+            {
+
+                <li>@reserve.DateTime</li>
+
+
+
+        }
+            </ul>*@
+    </div>
+    <div>
+       
+        <a asp-action="Index">Back to List</a>
+    </div>
+</section>
